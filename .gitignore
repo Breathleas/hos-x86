@@ -1,0 +1,5 @@
+*.bin
+*.o
+*.img
+*.iso
+run.sh
