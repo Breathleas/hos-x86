@@ -1,3 +1,4 @@
+mkdir -p bin
 #assembly files
 nasm -f elf ./boot/boot.asm -o ./bin/boot.o
 
