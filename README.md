@@ -26,4 +26,4 @@ Here's how it looks
 
 ![img file](https://github.com/jaychandra6/hos-x86/blob/main/os.png)
 
-The kernel is based on this [tutorial](http://www.osdever.net/bkerndev/Docs/title.htm)
+This project and the kernel is based on this [tutorial](http://www.osdever.net/bkerndev/Docs/title.htm)
