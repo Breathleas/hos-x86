@@ -28,7 +28,8 @@ mboot:
     dd start
 
 stublet:
-
+    extern main
+    call main
     jmp $
 
 SECTION .bss
