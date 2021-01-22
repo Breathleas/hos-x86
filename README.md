@@ -5,6 +5,7 @@
 Currently you need ```NASM```, ```GCC``` and ```QEMU``` to build the image file.
 
 Install the packages using the following commands.
+
 Note: These commands will only work on Ubuntu/Debian based systems.
 ```
 apt-get install nasm
