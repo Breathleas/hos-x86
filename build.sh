@@ -1,4 +1,8 @@
-mkdir -p bin
+if [ ! -d bin ] 
+then
+    mkdir -p bin
+fi
+
 #assembly files
 nasm -f elf ./boot/boot.asm -o ./bin/boot.o
 
