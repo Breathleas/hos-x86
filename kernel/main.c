@@ -39,7 +39,7 @@ void out_port_byte(unsigned short port, unsigned char data){
 }
 
 int main(){
-    set_cursor_pos(0,0);
+  set_cursor_pos(0,0);
 	clear(COLOR_WHT, COLOR_BLK);
     
 	const char *welcome = "\nHello, There! you are now in Kernel!\n\n";
