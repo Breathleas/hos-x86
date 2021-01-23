@@ -32,6 +32,20 @@ stublet:
     call main
     jmp $
 
+global _gdt_flush
+extern gp
+_gdt_flush:
+    lgdt [gp]       ;special pointer gp to load the GDT
+    mov ax, 0x10    ;0x10 is the offset in the GDT to our data segment
+    mov ds, ax
+    mov es, ax
+    mov fs, ax
+    mov gs, ax
+    mov ss, ax
+    jmp 0x08:flush2 ;0x08 is the offset to code segmnet and flush2 is far jump
+flush2:
+    ret
+
 SECTION .bss
     resb 8192               ; This reserves 8KBytes of memory here
 _sys_stack:
