@@ -41,14 +41,13 @@ void out_port_byte(unsigned short port, unsigned char data){
 int main(){
   set_cursor_pos(0,0);
 	clear(COLOR_WHT, COLOR_BLK);
-    
-	const char *welcome = "\nHello, There! you are now in Kernel!\n\n";
-	const char *first = "It now has a more advanced VGA driver!\n";
-	const char *second = "and supports special characters like\t tab and\n newline.\n\n";
+  kprintf("Loading kernel into memory...[OK]\n");
+  
+  //install GDT and IDT.
+  gdt_install();
+  idt_install();
 
-	putstr(welcome, COLOR_GRN, COLOR_BLK);
-	putstr(first, COLOR_WHT, COLOR_BLK);
-	putstr(second, COLOR_WHT, COLOR_BLK);
+  putstr("\nWelcome to HOS, an x86 operating system written in C from scratch.\n", COLOR_GRN, COLOR_BLK);
 
     return 0;
 }

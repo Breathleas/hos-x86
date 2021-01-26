@@ -71,6 +71,11 @@ void putstr(const char *string, const unsigned char fg_color, const unsigned cha
     }
 }
 
+void kprintf(const char *string){
+    while(*string != '\0'){
+        putchar(*string++, COLOR_WHT, COLOR_BLK);
+    }
+}
 
 unsigned short get_cursor_pos(){
     unsigned short position = 0;
