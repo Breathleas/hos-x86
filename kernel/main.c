@@ -43,11 +43,11 @@ int main(){
 	clear(COLOR_WHT, COLOR_BLK);
   kprintf("Loading kernel into memory...[OK]\n");
   
-  //install GDT and IDT.
+  //install GDT, IDT, and ISRs.
   gdt_install();
   idt_install();
+  isr_install();
 
   putstr("\nWelcome to HOS, an x86 operating system written in C from scratch.\n", COLOR_GRN, COLOR_BLK);
-
-    return 0;
+  return 0;
 }
