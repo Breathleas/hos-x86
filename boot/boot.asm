@@ -46,6 +46,13 @@ _gdt_flush:
 flush2:
     ret
 
+;lets load the IDT
+global load_idt
+extern idtp
+load_idt:
+    lidt [idtp]
+    ret
+
 SECTION .bss
     resb 8192               ; This reserves 8KBytes of memory here
 _sys_stack:
