@@ -15,9 +15,9 @@ int ticks = 0;
 void timer_handler(struct regs *r){
     //increment number of ticks
     ticks++;
-    if(ticks%18 == 0){
+    /*if(ticks%18 == 0){
         putstr("One second has passed.\n", COLOR_YEL, COLOR_BLK);
-    }
+    }*/
 }
 
 //let's install timer handler into IRQ0

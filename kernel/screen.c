@@ -36,6 +36,7 @@ void putchar(const char character, const unsigned char fg_color, const unsigned 
             set_cursor_pos(0, current_row);
         }
     }
+    
 
     else if (character == '\r'){
         unsigned char current_row = (unsigned char) (position / VGA_WIDTH);

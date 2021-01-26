@@ -50,7 +50,7 @@ int main(){
   isr_install();
   irq_install();
   timer_install();
-
+  keyboard_install();
   //enable the interrupts
   __asm__ __volatile__("sti");
 
