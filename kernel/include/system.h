@@ -109,4 +109,11 @@ struct regs
     unsigned int eip, cs, eflags, useresp, ss;   /* pushed by the processor automatically */ 
 };
 
+//----------------------------------------------------------------------------------------------------------------
+/* IRQ.C */
+void irq_install();
+void irq_install_handler();
+void irq_uninstall_handler();
+
+
 #endif

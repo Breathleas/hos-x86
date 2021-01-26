@@ -47,6 +47,10 @@ int main(){
   gdt_install();
   idt_install();
   isr_install();
+  irq_install();
+
+  //enable the interrupts
+  __asm__ __volatile__("sti");
 
   putstr("\nWelcome to HOS, an x86 operating system written in C from scratch.\n", COLOR_GRN, COLOR_BLK);
   return 0;
