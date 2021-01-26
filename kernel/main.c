@@ -41,17 +41,22 @@ void out_port_byte(unsigned short port, unsigned char data){
 int main(){
   set_cursor_pos(0,0);
 	clear(COLOR_WHT, COLOR_BLK);
-  kprintf("Loading kernel into memory...[OK]\n");
+  kprintf("Loading kernel into memory...");
+  putstr("[OK]\n", COLOR_GRN, COLOR_BLK);
   
   //install GDT, IDT, and ISRs.
   gdt_install();
   idt_install();
   isr_install();
   irq_install();
+  timer_install();
 
   //enable the interrupts
   __asm__ __volatile__("sti");
 
-  putstr("\nWelcome to HOS, an x86 operating system written in C from scratch.\n", COLOR_GRN, COLOR_BLK);
+  kprintf("-------------------------------------------------------------------");
+  putstr("\nWelcome to HOS, an x86 operating system written in C from scratch.\n", COLOR_DGY, COLOR_WHT);
+  kprintf("-------------------------------------------------------------------\n");
+
   return 0;
 }

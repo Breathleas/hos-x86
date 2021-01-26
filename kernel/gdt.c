@@ -71,5 +71,5 @@ void gdt_install()
 
     /* Flush out the old GDT and install the new changes! */
     _gdt_flush();
-    kprintf("[OK]\n");
+    putstr("[OK]\n", COLOR_GRN, COLOR_BLK);
 }

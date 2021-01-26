@@ -115,5 +115,8 @@ void irq_install();
 void irq_install_handler();
 void irq_uninstall_handler();
 
+//----------------------------------------------------------------------------------------------------------------
+/* TIMER.C */
+void timer_install();
 
 #endif

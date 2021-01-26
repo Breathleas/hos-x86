@@ -51,5 +51,5 @@ void idt_install(){
 
     //tell the processor to point the internal register to the new IDT
     load_idt();
-    kprintf("[OK]\n");
+    putstr("[OK]\n", COLOR_GRN, COLOR_BLK);
 }

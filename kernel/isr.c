@@ -74,7 +74,7 @@ void isr_install()
     idt_set_gate(29, (unsigned)_isr29, 0x08, 0x8E);
     idt_set_gate(30, (unsigned)_isr30, 0x08, 0x8E);
     idt_set_gate(31, (unsigned)_isr31, 0x08, 0x8E);
-    kprintf("[OK]\n");
+    putstr("[OK]\n", COLOR_GRN, COLOR_BLK);
 }
 
 //let's define an array of strings to represent the exception messages for our ISRs
