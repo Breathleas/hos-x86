@@ -14,7 +14,8 @@ gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-func
 gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./kernel/include -c -o ./bin/isr.o ./kernel/isr.c
 gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./kernel/include -c -o ./bin/irq.o ./kernel/irq.c
 gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./kernel/include -c -o ./bin/timer.o ./kernel/timer.c
+gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./kernel/include -c -o ./bin/keyboard.o ./kernel/keyboard.c
 
 
 #linker scripts
-ld -T link.ld -m elf_i386 -o kernel.bin ./bin/boot.o ./bin/main.o ./bin/screen.o ./bin/gdt.o ./bin/idt.o ./bin/isr.o ./bin/irq.o ./bin/timer.o
+ld -T link.ld -m elf_i386 -o kernel.bin ./bin/boot.o ./bin/main.o ./bin/screen.o ./bin/gdt.o ./bin/idt.o ./bin/isr.o ./bin/irq.o ./bin/timer.o ./bin/keyboard.o
