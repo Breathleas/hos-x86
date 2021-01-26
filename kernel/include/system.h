@@ -81,9 +81,17 @@ void hide_cursor();
 void advance_cursor();
 void set_cursor_pos(unsigned char x, unsigned char y);
 
+void kprintf(const char *string);
 
 //scroll line
 void scroll_line();
+//----------------------------------------------------------------------------------------------------------------
+/* GDT.C */
+void gdt_set_gate(int num, unsigned long base, unsigned long limit, unsigned char access, unsigned char gran);
+void gdt_install();
 //-----------------------------------------------------------------------------------------------------------------
+/* IDT.C */
+void idt_set_gate(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags);
+void idt_install();
 
 #endif
