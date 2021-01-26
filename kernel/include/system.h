@@ -1,7 +1,6 @@
 #ifndef __SYSTEM_H
 #define __SYSTEM_H
 
-//-----------------------------------------------------------------------------------------------------------------
 /* MAIN.C */
 extern unsigned char *memcpy(unsigned char *dest, const unsigned char *src, int count);
 extern unsigned char *memset(unsigned char *dest, unsigned char val, int count);
@@ -10,7 +9,6 @@ extern int strlen(const char *str);
 extern unsigned char in_port_byte(unsigned short port);
 extern void out_port_byte(unsigned short port, unsigned char data);
 
-//-----------------------------------------------------------------------------------------------------------------
 /* SCREEN.C */
 //define basic constants
 #define VGA_START 0xb8000 //VGA start address
@@ -18,7 +16,6 @@ extern void out_port_byte(unsigned short port, unsigned char data);
 #define VGA_HEIGHT 25 //these are max rows in VGA
 #define VGA_EXTENT 80*25
 
-//---------------------------------------------------
 //defining available colors
 #define COLOR_BLK 0     // Black
 #define COLOR_BLU 1     // Blue
@@ -37,7 +34,6 @@ extern void out_port_byte(unsigned short port, unsigned char data);
 #define COLOR_YEL 14    // Yellow
 #define COLOR_WHT 15    // White
 
-//---------------------------------------------------
 
 //I/O ports which map the screen cursor position can be queried
 //from port 0x3d4 with value 14 to request the cursor position high byte
@@ -50,7 +46,6 @@ extern void out_port_byte(unsigned short port, unsigned char data);
 #define CURSOR_PORT_COMMAND (unsigned short) 0x3d4
 #define CURSOR_PORT_DATA (unsigned short) 0x3d5
 
-//---------------------------------------------------
 //define a single character struct with close packing
 typedef struct __attribute__((packed)){
 	char character;
@@ -85,17 +80,17 @@ void kprintf(const char *string);
 
 //scroll line
 void scroll_line();
-//----------------------------------------------------------------------------------------------------------------
+
 /* GDT.C */
 void gdt_set_gate(int num, unsigned long base, unsigned long limit, unsigned char access, unsigned char gran);
 void gdt_install();
 
-//-----------------------------------------------------------------------------------------------------------------
+
 /* IDT.C */
 void idt_set_gate(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags);
 void idt_install();
 
-//----------------------------------------------------------------------------------------------------------------
+
 /* ISR.C */
 void isr_install();
 //the following is a data structure that defines how stack looks when an ISR is running
@@ -109,13 +104,13 @@ struct regs
     unsigned int eip, cs, eflags, useresp, ss;   /* pushed by the processor automatically */ 
 };
 
-//----------------------------------------------------------------------------------------------------------------
+
 /* IRQ.C */
 void irq_install();
 void irq_install_handler();
 void irq_uninstall_handler();
 
-//----------------------------------------------------------------------------------------------------------------
+
 /* TIMER.C */
 void timer_install();
 
