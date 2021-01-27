@@ -2,7 +2,7 @@
 #include <isr.h>
 #include <irq.h>
 #include <timer.h>
-
+#include "./lib/string.h"
 
 //The timer has 3 channels, 0,1,2
 //0 is for IRQ0
@@ -13,14 +13,19 @@
 //let's keep track of number of ticks elapsed
 int ticks = 0;
 
+//char *str;
+
 //to increase the "ticks" variable, we increment it evrytime the timer fires.
 //the timer PIT is connected to IRQ0, so evrytime it fires, we increment it
 //by default, the timer fires 18.222 times/second.
 void timer_handler(struct regs *r){
     //increment number of ticks
     ticks++;
-    /*if(ticks%18 == 0){
+    /*str = itoa(ticks, str, 10);
+    if(ticks%18 == 0){
         putstr("One second has passed.\n", COLOR_YEL, COLOR_BLK);
+        kprintf("\nTicks: ");
+        kprintf(str);
     }*/
 }
 
