@@ -65,6 +65,7 @@ void hide_cursor();
 
 //set the cursor position
 void advance_cursor();
+void move_back_cursor();
 void set_cursor_pos(unsigned char x, unsigned char y);
 
 void kprintf(const char *string);

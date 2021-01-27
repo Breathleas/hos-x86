@@ -37,8 +37,16 @@ void putchar(const char character, const unsigned char fg_color, const unsigned 
             set_cursor_pos(0, current_row);
         }
     }
-    
+    else if(character == '\b'){
+        move_back_cursor();
+        /*unsigned char style = vga_color(fg_color, bg_color);
+        vga_char printed = {
+            .character = ' ',
+            .style = style
+        };
 
+        TEXT_AREA[position] = printed;*/
+    }
     else if (character == '\r'){
         unsigned char current_row = (unsigned char) (position / VGA_WIDTH);
 
@@ -126,6 +134,16 @@ void advance_cursor(){
     out_port_byte(CURSOR_PORT_DATA, (unsigned char) ((pos >> 8) & 0xFF));
 }
 
+void move_back_cursor(){
+    unsigned short pos = get_cursor_pos();
+    pos--;
+
+    out_port_byte(CURSOR_PORT_COMMAND, 0x0F);
+    out_port_byte(CURSOR_PORT_DATA, (unsigned char) (pos & 0xFF));
+
+    out_port_byte(CURSOR_PORT_COMMAND, 0x0E);
+    out_port_byte(CURSOR_PORT_DATA, (unsigned char) ((pos >> 8) & 0xFF));
+}
 
 void set_cursor_pos(unsigned char x, unsigned char y){
     unsigned short pos = (unsigned short) x + ((unsigned short) VGA_WIDTH * y);

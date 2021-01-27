@@ -53,10 +53,11 @@ void keyboard_handler(struct regs *r){
     scancode = in_port_byte(0x60);
 
     if(scancode & 0x80){
-        //use Shift, Alt, CTRL keys
+        //use Shift, Alt, CTRL keys here
     }
     else{
-        putchar(ascii_values[scancode], COLOR_WHT, COLOR_BLK);
+        char c = ascii_values[scancode];
+        putchar(c, COLOR_WHT, COLOR_BLK);
     }
 
 }
