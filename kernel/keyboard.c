@@ -1,4 +1,8 @@
-#include <system.h>
+#include <ports.h>
+#include <screen.h>
+#include <isr.h>
+#include <irq.h>
+#include <keyboard.h>
 
 //shamelessly copied this from bkerndev
 

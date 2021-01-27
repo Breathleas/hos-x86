@@ -1,4 +1,6 @@
-#include <system.h>
+#include <screen.h>
+#include <mem.h>
+#include <idt.h>
 
 //define a structure for the IDT entry
 struct idt_entry

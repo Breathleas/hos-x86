@@ -1,4 +1,5 @@
-#include <system.h>
+#include <gdt.h>
+#include <screen.h>
 
 /* Defines a GDT entry */
 struct gdt_entry

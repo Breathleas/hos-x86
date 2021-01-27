@@ -1,4 +1,8 @@
-#include <system.h>
+#include <ports.h>
+#include <screen.h>
+#include <idt.h>
+#include <isr.h>
+#include <irq.h>
 
 //IRQs occur whenever a device wants to interact with the CPU
 //the CPU will use two PICs, master and slave to interact with devices

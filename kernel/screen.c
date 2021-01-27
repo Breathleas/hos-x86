@@ -1,4 +1,5 @@
-#include <system.h>
+#include <ports.h>
+#include <screen.h>
 
 volatile vga_char *TEXT_AREA = (vga_char*) VGA_START;
 

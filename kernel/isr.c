@@ -1,4 +1,6 @@
-#include <system.h>
+#include <screen.h>
+#include <idt.h>
+#include <isr.h>
 
 //define our ISRs here
 extern void _isr0();

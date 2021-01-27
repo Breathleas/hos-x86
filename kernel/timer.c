@@ -1,4 +1,8 @@
-#include <system.h>
+#include <screen.h>
+#include <isr.h>
+#include <irq.h>
+#include <timer.h>
+
 
 //The timer has 3 channels, 0,1,2
 //0 is for IRQ0
