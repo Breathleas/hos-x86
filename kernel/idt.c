@@ -1,5 +1,5 @@
 #include <screen.h>
-#include <mem.h>
+#include "./lib/mem.h"
 #include <idt.h>
 
 //define a structure for the IDT entry
