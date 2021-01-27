@@ -20,9 +20,3 @@ unsigned short *memsetw(unsigned short *dest, unsigned short val, int count)
   for (i=0; i<count;i++) dest[i]=val;
   return dest;
 }
-
-int strlen(const char *str)
-{
-  int i;
-  for (i=0;;i++) if (str[i] == '\0') return i;
-}
