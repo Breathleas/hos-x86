@@ -30,6 +30,7 @@ Some Features
 * VGA Driver
 * Keyboard Driver
 * Timer
+
 There are still plenty of things that needs to be added, which I'll do it in spare time.
 
 Here's how it looks
