@@ -20,7 +20,12 @@ sh build.sh or ./build.sh
 
 To emulate the os image, run the following command
 ```
-qemu-system-i386 -kernel kernel.bin
+qemu-system-i386 -kernel os.bin
+```
+
+To run it using GRUB bootloader,
+```
+qemu-system-i386 hos-x86.iso
 ```
 
 Some Features
