@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 if [ ! -d bin ] 
 then
     mkdir -p bin
@@ -21,10 +19,10 @@ gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-func
 gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./kernel/include -c -o ./bin/keyboard.o ./kernel/keyboard.c
 gcc -m32 -elf_i386 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./kernel/include -c -o ./bin/string.o ./kernel/lib/string.c
 
+
 #linker scripts
 ld -T link.ld -m elf_i386 -o os.bin ./bin/boot.o ./bin/main.o ./bin/ports.o ./bin/screen.o ./bin/mem.o ./bin/gdt.o ./bin/idt.o ./bin/isr.o ./bin/irq.o ./bin/timer.o ./bin/keyboard.o ./bin/string.o
 
-#Making an ISO file for booting using GRUB
 mkdir -p isodir/boot/grub
 cp os.bin isodir/boot/os.bin
 cp grub.cfg isodir/boot/grub/grub.cfg
