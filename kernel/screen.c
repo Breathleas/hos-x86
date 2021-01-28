@@ -39,13 +39,8 @@ void putchar(const char character, const unsigned char fg_color, const unsigned 
     }
     else if(character == '\b'){
         move_back_cursor();
-        /*unsigned char style = vga_color(fg_color, bg_color);
-        vga_char printed = {
-            .character = ' ',
-            .style = style
-        };
-
-        TEXT_AREA[position] = printed;*/
+        putchar(' ', fg_color, bg_color);
+        move_back_cursor();
     }
     else if (character == '\r'){
         unsigned char current_row = (unsigned char) (position / VGA_WIDTH);
