@@ -13,7 +13,7 @@ apt-get install gcc
 apt-get install qemu
 ```
 
-To build the image, run the following command
+To build the image, run the following command or you can download the iso file from [releases](https://github.com/jaychandra6/hos-x86/releases/tag/0.2)
 ```
 sh build.sh or ./build.sh
 ```
